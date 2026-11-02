@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gün Cetveli — Yedi Yıldızun Ahkâmı</title>
+<meta name="description" content="Günün saatleri, ayın günlerinin hâssaları ve ay menzili — Şeyh Vefâ'nın Yedi Yılduzuŋ Ahkâmı risalesine göre.">
+<meta property="og:title" content="Gün Cetveli — Şeyh Vefâ, Yedi Yılduzuŋ Ahkâmı">
+<meta property="og:description" content="Günün saatleri, ayın günlerinin hâssaları ve ay menzili — Şeyh Vefâ'nın risalesine göre.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F7F4EE">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F4EE; --panel:#FFFFFF; --sunk:#F0EBE1; --line:#DED5C5;
+  --ink:#241F18; --ink2:#6B6154; --ink3:#9A9084;
+  --accent:#8A6A2F; --accent-soft:#F3E9D4; --warn:#A8452C;
+  --r:10px;
+  --serif:'Lora',Georgia,'Times New Roman',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#16130F; --panel:#211D18; --sunk:#1A1713; --line:#3A332A;
+    --ink:#EDE6DA; --ink2:#A89C8B; --ink3:#776C5D;
+    --accent:#D0AB6B; --accent-soft:#2E2618; --warn:#D98166;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16130F; --panel:#211D18; --sunk:#1A1713; --line:#3A332A;
+  --ink:#EDE6DA; --ink2:#A89C8B; --ink3:#776C5D;
+  --accent:#D0AB6B; --accent-soft:#2E2618; --warn:#D98166;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding:28px 18px 64px}
+h1{font-family:var(--serif);font-size:26px;font-weight:600;margin:0 0 4px;letter-spacing:-.01em}
+.sub{color:var(--ink2);font-size:14px;margin:0 0 26px}
+h2{font-family:var(--serif);font-size:18px;font-weight:600;margin:0 0 3px}
+.note{color:var(--ink2);font-size:13px;margin:0 0 14px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:16px}
+label{display:block;font-size:12px;color:var(--ink2);margin-bottom:4px}
+input,select{font-family:inherit;font-size:14px;color:var(--ink);background:var(--sunk);border:1px solid var(--line);border-radius:7px;padding:7px 9px;width:100%}
+input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:10px}
+.row{display:flex;align-items:baseline;gap:12px;padding:10px 12px;border-radius:8px;background:var(--sunk);margin-bottom:5px;flex-wrap:wrap}
+.row.now{background:var(--accent-soft);box-shadow:inset 0 0 0 1px var(--accent)}
+.row.void{background:transparent;border:1px dashed var(--line)}
+.t{font-variant-numeric:tabular-nums;font-size:13px;color:var(--ink2);min-width:104px;flex-shrink:0}
+.p{font-family:var(--serif);font-size:17px;font-weight:600;min-width:80px;flex-shrink:0}
+.p.void{color:var(--ink3);font-style:italic;font-weight:400;font-size:14px}
+.d{font-size:13px;color:var(--ink2);flex:1 1 200px;min-width:0}
+.row.clk{cursor:pointer}
+.row.clk:hover{box-shadow:inset 0 0 0 1px var(--line)}
+.chev{color:var(--ink3);font-size:12px;flex-shrink:0}
+.amel{padding:2px 12px 14px;margin:-3px 0 5px}
+.amel h4{font-family:var(--serif);font-size:13px;font-weight:600;margin:12px 0 5px;letter-spacing:.02em}
+.amel h4.iyi{color:#3F7A4F}
+.amel h4.kotu{color:var(--warn)}
+:root:not([data-theme="light"]) .amel h4.iyi{color:#7FB98C}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .amel h4.iyi{color:#3F7A4F}}
+.amel ul{margin:0;padding-left:17px;font-size:13.5px;color:var(--ink);line-height:1.6}
+.amel li{margin-bottom:7px}
+.amel .asl{display:block;font-size:12px;color:var(--ink3);font-style:italic;margin-top:1px}
+.amel .ogul{font-size:13px;color:var(--ink2);font-style:italic;margin:11px 0 0;padding-top:9px;border-top:1px solid var(--line)}
+.amel .uyari{font-size:12.5px;color:var(--warn);margin:9px 0 0}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line);font-size:14px}
+.kv:last-child{border-bottom:0}
+.kv span:first-child{color:var(--ink2)}
+.kv span:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border-radius:4px;padding:2px 7px;margin-bottom:8px}
+.kgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(38px,1fr));gap:5px;margin-top:12px}
+.kg{aspect-ratio:1;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;font-variant-numeric:tabular-nums;cursor:pointer;border:1px solid transparent}
+.kg.z{background:#F6E2DC;color:#8C3620}
+.kg.f{background:#E0EFE3;color:#2E6640}
+.kg.ka{background:var(--sunk);color:var(--ink2)}
+.kg.sel{outline:2px solid var(--accent);outline-offset:1px;font-weight:600}
+:root:not([data-theme="light"]) .kg.z{background:#3D2019;color:#E8A692}
+:root:not([data-theme="light"]) .kg.f{background:#1C3325;color:#8FC8A2}
+.khuk{margin-top:14px;padding:14px;border-radius:8px;background:var(--sunk)}
+.khuk .bas{font-family:var(--serif);font-size:17px;font-weight:600;margin:0 0 3px}
+.khuk .bas.z{color:var(--warn)}
+.khuk .bas.f{color:#3F7A4F}
+:root:not([data-theme="light"]) .khuk .bas.f{color:#7FB98C}
+.khuk .asl{font-size:12.5px;color:var(--ink3);font-style:italic}
+.hgun{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.hgun input{width:64px}
+.bdg{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;padding:3px 8px;font-weight:600}
+.bdg.m{background:#E0EFE3;color:#2E6640}
+.bdg.n{background:#F6E2DC;color:#8C3620}
+.bdg.k{background:var(--accent-soft);color:var(--accent)}
+:root:not([data-theme="light"]) .bdg.m{background:#1C3325;color:#8FC8A2}
+:root:not([data-theme="light"]) .bdg.n{background:#3D2019;color:#E8A692}
+.gk{background:var(--sunk);border-radius:8px;padding:15px;margin-top:12px}
+.gk h3{font-family:var(--serif);font-size:19px;font-weight:600;margin:9px 0 0}
+.gk h5{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink2);margin:15px 0 5px;font-weight:600}
+.gk h5.iyi{color:#3F7A4F}.gk h5.kotu{color:var(--warn)}
+:root:not([data-theme="light"]) .gk h5.iyi{color:#7FB98C}
+.gk ul{margin:0;padding-left:17px;font-size:14px;line-height:1.6}
+.gk li{margin-bottom:3px}
+.gk p.f{font-size:14px;margin:4px 0 0}
+.gk .tar{font-size:13.5px;color:var(--ink2);font-style:italic;margin:7px 0 0}
+.gk .uy{font-size:12.5px;color:var(--warn);margin:13px 0 0;padding-top:10px;border-top:1px solid var(--line)}
+.soon{color:var(--ink3);font-size:13px;font-style:italic;padding:16px;text-align:center;border:1px dashed var(--line);border-radius:8px}
+footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:26px;line-height:1.7}
+@media(max-width:480px){.t{min-width:100%}.p{min-width:72px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Gün Cetveli</h1>
+<p class="sub">Şeyh Vefâ — <i>Yedi Yıldızun Ahkâmı</i>. Cetveller neşredilen metne göredir; tamamlama yapılmamıştır.</p>
+
+<section>
+  <h2>Vakitler</h2>
+  <p class="note">İlini seç; vakitler her gün için Diyanet yöntemiyle otomatik hesaplanır. Seçimin tarayıcında saklanır.</p>
+  <div class="grid">
+    <div><label for="tarih">Tarih</label><input type="date" id="tarih"></div>
+    <div style="grid-column:span 2;min-width:0"><label for="il">İl</label><select id="il"></select></div>
+    <div><label for="smod">Sabah olarak</label><select id="smod"><option value="g">Güneş doğuşu</option><option value="i">İmsak</option></select></div>
+    <div><label for="kdk">Kuşluk: güneşten</label><input type="number" id="kdk" min="0" max="180" step="5" value="45"></div>
+  </div>
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:10px 0 2px">
+    <button id="geo" type="button" style="font:inherit;font-size:13px;padding:6px 11px;border-radius:7px;border:1px solid var(--line);background:var(--sunk);color:var(--ink);cursor:pointer">Konumumu kullan</button>
+    <span id="geonot" style="font-size:12.5px;color:var(--ink3)"></span>
+  </div>
+  <div class="grid" style="margin-top:10px">
+    <div><label for="t0">Sabah</label><input type="time" id="t0"></div>
+    <div><label for="t1">Kuşluk</label><input type="time" id="t1"></div>
+    <div><label for="t2">Öğle</label><input type="time" id="t2"></div>
+    <div><label for="t3">İkindi</label><input type="time" id="t3"></div>
+    <div><label for="t4">Akşam</label><input type="time" id="t4"></div>
+  </div>
+  <p class="note" style="margin:8px 0 0">Hesaplanan vakitler Diyanet takviminden bir iki dakika şaşabilir. Elle düzeltebilirsin; düzeltme sadece o an geçerlidir, kaydedilmez.</p>
+</section>
+
+<section>
+  <h2>Ayın günü</h2>
+  <p class="note" id="hicrinot"></p>
+  <div class="hgun">
+    <label for="tkv" style="margin:0">Takvim</label>
+    <select id="tkv" style="width:auto">
+      <option value="h">Hicrî</option>
+      <option value="r">Rûmî — neşrin tanıtımına göre</option>
+      <option value="e">Elle gireceğim</option>
+    </select>
+    <label for="hg" style="margin:0 0 0 6px">Ayın günü</label>
+    <input type="number" id="hg" min="1" max="31" step="1">
+  </div>
+  <div id="gunhas"></div>
+  <p class="note" style="margin:16px 0 0">Başka bir güne bakmak için:</p>
+  <div class="kgrid" id="gungrid"></div>
+</section>
+
+<section>
+  <h2 id="gunbaslik">Gün cetveli</h2>
+  <p class="note" id="gunnot"></p>
+  <div id="cetvel"></div>
+</section>
+
+<section>
+  <h2>Yıldızlara göre ameller</h2>
+  <p class="note">Hükümler güne değil yıldıza bağlıdır; hangi güne düştüğü fark etmez. Yukarıdaki cetvelde bir dilime dokunarak da görebilirsin.</p>
+  <div id="ameller"></div>
+</section>
+
+<section>
+  <h2>Ay menzili</h2>
+  <p class="note">Ay'ın boylamından hesaplanır. Sidereal sütunu yıldız temelli klasik kaynaklar, tropik sütunu şematik burç tabloları içindir.</p>
+  <div id="menzil"></div>
+</section>
+
+<section>
+  <h2>Kan aldırma — ayın günlerine göre</h2>
+  <p class="note">Yukarıda seçilen güne göre. İlk on beş gün zararlı, 16-28 arası faydalı, son iki gün tehlikeli sayılmıştır.</p>
+  <div id="kanhuk"></div>
+  <div class="kgrid" id="kangrid"></div>
+  <p class="note" style="margin:14px 0 0">Bunlar metnin kendi hükümleridir; sağlık tavsiyesi değildir.</p>
+</section>
+
+<footer>
+  Yazma: Süleymaniye Ktp., Şehid Ali Paşa 2795/12, vr. 77a-81a.<br>
+  Ta'lik hatla, harekesiz. Müstensih Ahmed b. Haydar,<br>
+  24 Muharrem 997 / 13 Aralık 1588.<br><br>
+  Metnin kendi kaydı: <i>“Bu cümle müneccimler kavlidür:<br>lâ ya‘lemü’l-gaybe illâ’llâh.”</i><br><br>
+  Cetveller ve ameller neşredilen metinden birebir alınmıştır.<br>
+  Metnin hüküm vermediği zaman aralıkları boş bırakılmıştır.
+</footer>
+
+</div>
+
+<script>
+/* ---------- Cetveller: neşredilen metne birebir sadık ---------- */
+/* Çapa kodları: S sabah, K kuşluk, KO kuşluk-öğle ortası,
+   O öğle, OI öğle-ikindi ortası (metinde "ikindi namazı ortası"),
+   I ikindi, IA ikindi-akşam ortası ("akşam ortası"), A akşam      */
+
+var CETVEL = {
+ 0:{ad:"Pazar",fars:"yekşenbih",dilim:[
+  ["S","K","Şems","Sabahtan kuşluk vaktine"],
+  ["K","KO","Zühre","Kuşluktan öğle namazı ortasına"],
+  ["O","OI","Utârid","Öğleden ikindi namazı ortasına"],
+  ["I","IA","Kamer","İkindiden ikindi ile akşam ortasına"],
+  ["IA","A","Zühal","Akşam ortasından akşam vaktine"]]},
+ 1:{ad:"Pazartesi",fars:"düşenbih",dilim:[
+  ["S","K","Kamer","Sabahtan kuşluk vaktine"],
+  ["K","KO","Zühal","Kuşluk ile öğle ortasına"],
+  ["KO","O","Müşterî","Kuşluk ile öğle ortasından öğle vaktine"],
+  ["O","OI","Mirrîh","Öğle vaktinden ikindi namazı ortasına"],
+  ["OI","I","Şems","İkindi namazı ortasından ikindi vaktine"],
+  ["I","IA","Utârid","İkindi vaktinden ikindi ile akşam ortasına"]]},
+ 2:{ad:"Salı",fars:"seşenbih",dilim:[
+  ["S","K","Mirrîh","Sabahtan kuşluk vaktine"],
+  ["K","KO","Şems","Kuşluk vaktinden kuşluk ile öğle ortasına"],
+  ["KO","O","Zühre","Kuşluk ile öğle ortasından öğle vaktine"],
+  ["O","I","Kamer","Öğle vaktinden ikindi vaktine"],
+  ["I","IA","Zühal","İkindi vaktinden ikindi ile akşam ortasına"],
+  ["IA","A","Müşterî","Akşam ortasından akşam vaktine"]]},
+ 3:{ad:"Çarşamba",fars:"çehârşenbih",dilim:[
+  ["S","K","Utârid","Sabahtan kuşluk vaktine"],
+  ["K","KO","Kamer","Kuşluk vaktinden kuşluk ile öğle ortasına"],
+  ["KO","O","Zühal","Kuşluk ile öğle ortasından öğle vaktine"],
+  ["O","OI","Müşterî","Öğle vaktinden ikindi namazı ortasına"],
+  ["OI","I","Mirrîh","İkindi namazı ortasından ikindi vaktine"],
+  ["I","IA","Şems","İkindi vaktinden ikindi ile akşam ortasına"],
+  ["IA","A","Zühre","Akşam ortasından akşam vaktine"]]},
+ 4:{ad:"Perşembe",fars:"pençşenbih",dilim:[
+  ["S","K","Müşterî","Sabahtan kuşluk vaktine"],
+  ["K","KO","Mirrîh","Kuşluk vaktinden kuşluk ile öğle ortasına"],
+  ["KO","O","Şems","Kuşluk ile öğle ortasından öğle vaktine"],
+  ["O","OI","Zühre","Öğle vaktinden ikindi namazı ortasına"],
+  ["OI","I","Utârid","İkindi namazı ortasından ikindi vaktine"],
+  ["I","IA","Kamer","İkindi vaktinden ikindi ile akşam ortasına"],
+  ["IA","A","Zühal","Akşam ortasından akşam vaktine"]]},
+ 5:{ad:"Cuma",fars:"cum'a",dilim:[
+  ["S","K","Zühre","Sabahtan kuşluk vaktine"],
+  ["K","KO","Utârid","Kuşluk vaktinden kuşluk ile öğle ortasına"],
+  ["KO","O","Kamer","Kuşluk ile öğle ortasından öğle vaktine"],
+  ["O","OI","Zühal","Öğle vaktinden ikindi namazı ortasına"],
+  ["OI","I","Müşterî","İkindi namazı ortasından ikindi vaktine"],
+  ["I","IA","Mirrîh","İkindi vaktinden akşam ortasına"],
+  ["IA","A","Şems","Akşam ortasından akşam vaktine"]]},
+ 6:{ad:"Cumartesi",fars:"şenbih",dilim:[
+  ["S","K","Zühal","Sabahtan kuşluk vaktine"],
+  ["K","KO","Müşterî","Kuşluktan öğle ortasına"],
+  ["KO","O","Mirrîh","Öğle ortasından öğle vaktine"],
+  ["O","OI","Şems","Öğle vaktinden ikindi namazı ortasına"],
+  ["OI","I","Zühre","İkindi namazı ortasından ikindi vaktine"],
+  ["I","IA","Utârid","İkindi vaktinden akşam ortasına"],
+  ["IA","A","Kamer","İkindi ortasından akşam vaktine"]]}
+};
+
+/* ---------- Amel: gezegen bazında. [asıl ibare, günümüz Türkçesi] ---------- */
+var AMEL = {
+ "Zühal":{
+  iyi:[["kethudâlık eylemek","Vekillik, kâhyalık — birinin işlerini onun adına yürütmek"],
+       ["satu bâzâr etmek","Alışveriş, alım satım yapmak"],
+       ["çift sürüp ekin ekmek","Tarla sürmek, ekin ekmek"],
+       ["geñez işler","Kolay işler"],
+       ["düşman-içün tılsım yazmak","Düşmana karşı tılsım yazmak"]],
+  kotu:[["nikâh etmek","Nikâh kıymak, evlenmek"],
+        ["kimesne ilę yâr olmak destûr kılmak","Biriyle yâr olmaya izin vermek — ibare kapalı"],
+        ["kan almak","Kan aldırmak"],
+        ["kulağa hacâmat etmek","Kulak arkasından hacamat yaptırmak"],
+        ["hastaya mu'âlece eylemek","Hastayı tedavi etmek"],
+        ["pâdişâhlar ve begler yüzin görmek","Devlet büyüklerinin huzuruna çıkmak"],
+        ["savaşa varmak","Savaşa gitmek"],
+        ["cenk etmek","Dövüşmek, çarpışmak"],
+        ["yeni ton biçmek","Yeni elbise kestirmek, diktirmek"],
+        ["yeni ton geymek","Yeni elbise giymek"]],
+  ogul:["Ömri uzun olur ve dünyâlıgı hadden(?) aşa.","Ömrü uzun olur, dünyalığı haddinden fazla olur."]},
+
+ "Müşterî":{
+  iyi:[["nikâh etmek","Nikâh kıymak, evlenmek"],
+       ["dost dutmak","Dost edinmek"],
+       ["pâdişâhlar ve begler yüzin görmek","Devlet büyüklerinin huzuruna çıkmak"],
+       ["ulu hayırlı işler işlemek","Büyük hayır işleri yapmak"],
+       ["dost-içün tılsım yazmak","Dost için tılsım yazmak"],
+       ["yeni ton geymek","Yeni elbise giymek"],
+       ["yeni ton biçmek","Yeni elbise kestirmek"],
+       ["satu bâzâr etmek","Alışveriş yapmak"],
+       ["kan almak","Kan aldırmak"],
+       ["kulağa hacâmat etmek","Kulak arkasından hacamat yaptırmak"]],
+  kotu:[],
+  ogul:["Sâlih ola ve dîndâr ola ve şeytân mekrinden emin ola.","Salih ve dindar olur, şeytanın hilesinden korunur."]},
+
+ "Mirrîh":{
+  iyi:[["savaş âletin düzmek","Silah, savaş aleti hazırlamak"],
+       ["düşman-içün tılsım yazmak","Düşmana karşı tılsım yazmak"],
+       ["kan almak","Kan aldırmak"],
+       ["kulağa hacâmat etmek","Kulak arkasından hacamat yaptırmak"],
+       ["şâẕlık eylemek","Sevinç, şenlik etmek"],
+       ["yârlık","Dostluk kurmak, yâr olmak"]],
+  kotu:[["pâdişâhlar ve begler yüzin görmek","Devlet büyüklerinin huzuruna çıkmak"],
+        ["bir hâcet taleb etmek","Birinden bir dilekte, ricada bulunmak"],
+        ["sefere gitmek","Yolculuğa çıkmak"],
+        ["bâzirgânlık eylemek","Tüccarlık, ticaret yapmak"],
+        ["yeni ton biçmek ve geymek","Yeni elbise kestirmek ve giymek"]],
+  ogul:["Halkun malına harîs ola ve harâm yeyici ve kanlar dökici ola.","Halkın malına hırslı olur; zalim olur (neşrin sözlüğünde harâm yéyici ve kanlar dökici ikilisi zalim diye açıklanmış)."],
+  not:"Metinde bu aralıkta \"fesâd işe 'amel etmemek\" ibaresi geçiyor; olumsuzluk eki cümlenin gerisiyle uyuşmadığı için listeye alınmadı."},
+
+ "Şems":{
+  iyi:[["sefer eylemek","Yolculuğa çıkmak"],
+       ["ulu işlere başlamak","Büyük işlere girişmek"],
+       ["yeni ton geymek ve biçmek","Yeni elbise giymek ve kestirmek"],
+       ["nikâh etmek","Nikâh kıymak, evlenmek"],
+       ["satu bâzâr etmek","Alışveriş yapmak"],
+       ["kimesne ile dostlık eylemek","Biriyle dostluk kurmak"],
+       ["düşman-içün tılsım yazmak","Düşmana karşı tılsım yazmak"]],
+  kotu:[["bâzirgânlık etmek","Tüccarlık, ticaret yapmak"],
+        ["düşman-içün tılsım yazmak","Düşmana karşı tılsım yazmak"],
+        ["cenk âletin düzmek","Savaş aleti hazırlamak"]],
+  ogul:["Ömri uzun ve devletlü ola.","Ömrü uzun olur, talihli ve varlıklı olur."],
+  not:"\u201cDüşman-içün tılsım yazmak\u201d neşredilen metinde hem eyü hem eyü degül listesinde geçiyor. Yazmayla karşılaştırılması gerekir."},
+
+ "Zühre":{
+  iyi:[["nikâh etmek","Nikâh kıymak, evlenmek"],
+       ["yârlık etmek","Dostluk kurmak, yâr olmak"],
+       ["dost-içün tılsım yazmak","Dost için tılsım yazmak"],
+       ["ululaşmak istemek","Yücelmek, itibar kazanmak istemek"],
+       ["'avrat er yüzine bakmak","Kadının erkeğin yüzüne bakması"],
+       ["erler 'avratlar ve hâdimler yüzine bakmak","Erkeklerin kadınların ve hizmetkârların yüzüne bakması"],
+       ["kethudâlık eylemek","Vekillik, kâhyalık yapmak"],
+       ["kan aldurmak","Kan aldırmak"],
+       ["kullık göstermek","Hizmet sunmak, bağlılık göstermek"],
+       ["hastaya mu'âlece eylemek","Hastayı tedavi etmek"],
+       ["ot içmek","İlaç içmek (bitkisel ilaç)"],
+       ["yeni ton geymek ve biçmek","Yeni elbise giymek ve kestirmek"]],
+  kotu:[["melûl olmak","Kederlenmek, bezginliğe düşmek"],
+        ["savaş etmek","Savaşmak"],
+        ["âṣî olmak","Asi olmak, karşı gelmek"]],
+  ogul:["Dostı-yla 'îyş edici ola; dâimâ göñli ferah üzere ola; ve mâlâ harîs ola; ve ulu işler işlemege delim ola; 'âkıl ola.","Dostuyla hoş geçinir, gönlü hep ferah olur, mala düşkün olur, büyük işlere girişmeye çok istekli ve akıllı olur."]},
+
+ "Utârid":{
+  iyi:[["in'âm etmek","İhsanda bulunmak, bağış yapmak"],
+       ["sadaka vermek","Sadaka vermek"],
+       ["şeref ehlinün ve kalem ehlinün yüzine bakmak","Şeref sahipleriyle ve kalem erbabıyla (kâtip, âlim) görüşmek"],
+       ["ince işlere şürû' etmek","İnce, zanaat isteyen işlere başlamak"],
+       ["dost-içün tılsım yazmak","Dost için tılsım yazmak"]],
+  kotu:[["kan almak","Kan aldırmak"],
+        ["kulağa hacâmat","Kulak arkasından hacamat yaptırmak"],
+        ["fâl açmak","Fal bakmak"],
+        ["hastaya mu'âlece eylemek","Hastayı tedavi etmek"],
+        ["ot içmek","İlaç içmek"],
+        ["kirlü işler işlemek","Kirli, pis işler yapmak"],
+        ["nikâh etmek","Nikâh kıymak, evlenmek"]],
+  ogul:["'Âlim ve 'âkıl ve fâzıl ola.","Âlim, akıllı ve faziletli olur."]},
+
+ "Kamer":{
+  iyi:[["hastaya mu'âlece eylemek","Hastayı tedavi etmek"],
+       ["ekin ekmek","Ekin ekmek"],
+       ["bağlar ve bostanlar ta'mîr eylemek","Bağ ve bostan bakımı yapmak"],
+       ["yeni ton biçmek ve geymek","Yeni elbise kestirmek ve giymek"],
+       ["pâdişâhlar ve ulular yüzine bakmak","Devlet büyükleriyle görüşmek"],
+       ["avlanmak","Ava çıkmak"],
+       ["dost-içün tılsım yazmak","Dost için tılsım yazmak"]],
+  kotu:[["şol gereklü işler işlemek","\u201cŞu gerekli işleri yapmak\u201d — anlamı belirsiz"],
+        ["nikâh etmek","Nikâh kıymak, evlenmek"],
+        ["yârlık etmek","Dostluk kurmak, yâr olmak"]],
+  ogul:["Mâllu ve ni'metlü ola.","Mal ve nimet sahibi olur."],
+  not:"\u201cŞol gerekli işler işlemek\u201d ifadesinin eyü degül sayılması beklenmedik; gerekli işlerin sakıncalı olması anlamsız görünüyor. Muhtemel bir istinsah hatası."}
+};
+
+function madde(x){
+ return "<li>"+x[1]+'<span class="asl">'+x[0]+"</span></li>";
+}
+function amelHTML(gz){
+ var a=AMEL[gz]; if(!a){return ""}
+ var h='<div class="amel">';
+ if(a.iyi.length){h+='<h4 class="iyi">Eyüdür — yapılması iyi</h4><ul>'+a.iyi.map(madde).join("")+"</ul>"}
+ h+='<h4 class="kotu">Eyü degüldür — yapılmaması iyi</h4>';
+ h+= a.kotu.length ? "<ul>"+a.kotu.map(madde).join("")+"</ul>"
+   : '<ul><li>Metinde bu yıldız için sakınılacak iş sayılmamış.</li></ul>';
+ if(a.ogul){h+='<p class="ogul">Bu saatte doğan çocuk: '+a.ogul[1]+'<span class="asl">'+a.ogul[0]+" (metinde \u201coğlan\u201d, yani çocuk)</span></p>"}
+ if(a.not){h+='<p class="uyari">'+a.not+"</p>"}
+ return h+"</div>";
+}
+
+var ID=["tarih","t0","t1","t2","t3","t4"];
+function el(x){return document.getElementById(x)}
+function dk(v){var p=v.split(":");return (+p[0])*60+(+p[1])}
+function st(m){m=Math.round(m);return String(Math.floor(m/60)).padStart(2,"0")+":"+String(m%60).padStart(2,"0")}
+
+function capalar(){
+ var S=dk(el("t0").value),K=dk(el("t1").value),O=dk(el("t2").value),I=dk(el("t3").value),A=dk(el("t4").value);
+ return {S:S,K:K,KO:(K+O)/2,O:O,OI:(O+I)/2,I:I,IA:(I+A)/2,A:A};
+}
+
+function cizCetvel(){
+ var d=new Date(el("tarih").value+"T12:00:00");
+ if(isNaN(d)){d=new Date()}
+ var g=d.getDay(), c=CETVEL[g], a=capalar();
+ el("gunbaslik").textContent=c.ad+" — "+c.dilim.length+" dilim";
+ el("gunnot").textContent="Metinde "+c.fars+" olarak geçer.";
+
+ var simdi=null, bugun=new Date();
+ if(bugun.toDateString()===d.toDateString()){simdi=bugun.getHours()*60+bugun.getMinutes()}
+
+ var parca=[], onceki=null;
+ c.dilim.forEach(function(x){
+  var b=a[x[0]], s=a[x[1]];
+  if(onceki!==null && b-onceki>1){parca.push({bos:true,b:onceki,s:b})}
+  parca.push({bos:false,b:b,s:s,gz:x[2],ac:x[3]});
+  onceki=s;
+ });
+ if(onceki!==null && a.A-onceki>1){parca.push({bos:true,b:onceki,s:a.A})}
+
+ var h="";
+ parca.forEach(function(p){
+  var akt=(simdi!==null && simdi>=p.b && simdi<p.s);
+  if(p.bos){
+   h+='<div class="row void"><span class="t">'+st(p.b)+" – "+st(p.s)+'</span>'
+    +'<span class="p void">metin susuyor</span>'
+    +'<span class="d">Bu aralık için cetvelde hüküm yok</span></div>';
+  }else{
+   h+='<div class="row clk'+(akt?" now":"")+'" data-gz="'+p.gz+'"><span class="t">'+st(p.b)+" – "+st(p.s)+'</span>'
+    +'<span class="p">'+p.gz+'</span><span class="d">'+p.ac+'</span><span class="chev">▾</span></div>'
+    +'<div class="amelkap" style="display:'+(akt?"block":"none")+'">'+amelHTML(p.gz)+"</div>";
+  }
+ });
+ el("cetvel").innerHTML=h;
+ Array.prototype.forEach.call(document.querySelectorAll("#cetvel .row.clk"),function(r){
+  r.addEventListener("click",function(){
+   var k=r.nextElementSibling;
+   var ac=(k.style.display==="none");
+   k.style.display=ac?"block":"none";
+   r.querySelector(".chev").textContent=ac?"▴":"▾";
+  });
+  if(r.nextElementSibling.style.display==="block"){r.querySelector(".chev").textContent="▴"}
+ });
+ cizHicri(d);
+ cizMenzil(d);
+}
+
+function jdn(d){
+ var y=d.getFullYear(),m=d.getMonth()+1,g=d.getDate(),a=Math.floor((14-m)/12);
+ var yy=y+4800-a, mm=m+12*a-3;
+ return g+Math.floor((153*mm+2)/5)+365*yy+Math.floor(yy/4)-Math.floor(yy/100)+Math.floor(yy/400)-32045;
+}
+var RAY=["Kânûn-ı sânî","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Teşrîn-i evvel","Teşrîn-i sânî","Kânûn-ı evvel"];
+function rumi(d){
+ var c=jdn(d)+32082, dd=Math.floor((4*c+3)/1461), e=c-Math.floor(1461*dd/4);
+ var m=Math.floor((5*e+2)/153);
+ return {gun:e-Math.floor((153*m+2)/5)+1, ay:m+3-12*Math.floor(m/10), yil:dd-4800+Math.floor(m/10)};
+}
+function cizHicri(d){
+ var hu="",hg=null,dh=d,gece=false,simdi=new Date();
+ if(simdi.toDateString()===d.toDateString() && simdi.getHours()*60+simdi.getMinutes()>=dk(el("t4").value)){
+  dh=new Date(d.getTime()+86400000); gece=true;
+ }
+ try{
+  var f=new Intl.DateTimeFormat("tr-TR-u-ca-islamic-umalqura",{day:"numeric",month:"long",year:"numeric"});
+  hu=f.format(dh);
+  f.formatToParts(dh).forEach(function(p){if(p.type==="day"){hg=parseInt(p.value,10)}});
+ }catch(e){}
+ var r=rumi(d), rm=RAY[r.ay-1]||"";
+ el("hicrinot").innerHTML=(hu?"Hicrî: <b>"+hu+"</b>"+(gece?" — akşam ezanı girdi, yeni gün":"")+" &nbsp;·&nbsp; ":"")
+  +"Rûmî: "+r.gun+" "+rm+" "+r.yil
+  +'<br><span style="font-size:12.5px">Hicrî gün akşam ezanıyla değişir. Metin takvim adı vermiyor; neşrin tanıtımı Rûmî diyor, seçiciden değiştirebilirsin.</span>';
+ var t=el("tkv").value;
+ if(t==="r"){el("hg").value=r.gun}
+ else if(t==="h"&&hg){el("hg").value=hg}
+ cizKan();
+}
+
+/* ---------- Ay menzili ---------- */
+var MENZIL=["Şeratan","Butayn","Süreyyâ","Deberân","Hak'a","Hen'a","Zirâ'","Nesre","Tarf","Cebhe","Zübre","Sarfe","Avvâ","Simâk","Gafr","Zübânâ","İklîl","Kalb","Şevle","Neâim","Belde","Sa'd-ı Zâbih","Sa'd-ı Bül'a","Sa'd-ı Suûd","Sa'd-ı Ahbiye","Fer'u'l-Mukaddem","Fer'u'l-Muahhar","Batnü'l-Hût"];
+var RAD=Math.PI/180, GEN=360/28;
+var TRM=[[0,0,1,0,6288774],[2,0,-1,0,1274027],[2,0,0,0,658314],[0,0,2,0,213618],[0,1,0,0,-185116],[0,0,0,2,-114332],[2,0,-2,0,58793],[2,-1,-1,0,57066],[2,0,1,0,53322],[2,-1,0,0,45758],[0,1,-1,0,-40923],[1,0,0,0,-34720],[0,1,1,0,-30383],[2,0,0,-2,15327],[0,0,1,2,-12528],[0,0,1,-2,10980],[4,0,-1,0,10675],[0,0,3,0,10034],[4,0,-2,0,8548],[2,1,-1,0,-7888],[2,1,0,0,-6766],[1,0,-1,0,-5163],[1,1,0,0,4987],[2,-1,1,0,4036],[2,0,2,0,3994],[4,0,0,0,3861],[2,0,-3,0,3665],[0,1,-2,0,-2689],[2,0,-1,2,-2602],[2,-1,-2,0,2390],[1,0,1,0,-2348],[2,-2,0,0,2236],[0,1,2,0,-2120],[0,2,0,0,-2069],[2,-2,-1,0,2048],[2,0,1,-2,-1773],[2,0,0,2,-1595],[4,-1,-1,0,1215],[0,0,2,2,-1110],[3,0,-1,0,-892],[2,1,1,0,-810],[4,-1,-2,0,759],[0,2,-1,0,-713],[2,2,-1,0,-700],[2,1,-2,0,691],[2,-1,0,-2,596],[4,0,1,0,549],[0,0,4,0,537],[4,-1,0,0,520],[1,0,-2,0,-487]];
+function jd(d){return d.getTime()/86400000+2440587.5}
+function boylam(J){
+ var T=(J-2451545)/36525;
+ var Lp=218.3164477+481267.88123421*T-0.0015786*T*T+T*T*T/538841;
+ var D=297.8501921+445267.1114034*T-0.0018819*T*T+T*T*T/545868;
+ var M=357.5291092+35999.0502909*T-0.0001536*T*T;
+ var Mp=134.9633964+477198.8675055*T+0.0087414*T*T+T*T*T/69699;
+ var F=93.272095+483202.0175233*T-0.0036539*T*T-T*T*T/3526000;
+ var E=1-0.002516*T-0.0000074*T*T, s=0;
+ for(var i=0;i<TRM.length;i++){
+  var t=TRM[i], ar=(t[0]*D+t[1]*M+t[2]*Mp+t[3]*F)*RAD, c=t[4], e=Math.abs(t[1]);
+  if(e===1){c*=E}else if(e===2){c*=E*E}
+  s+=c*Math.sin(ar);
+ }
+ s+=3958*Math.sin((119.75+131.849*T)*RAD)+1962*Math.sin((Lp-F)*RAD)+318*Math.sin((53.09+479264.29*T)*RAD);
+ return ((Lp+s/1e6)%360+360)%360;
+}
+function ayanamsa(J){return 23.85+(J-2451545)/365.25*0.013972}
+function der(x){var d=Math.floor(x),m=Math.round((x-d)*60);if(m===60){d++;m=0}return d+"° "+m+"′"}
+function cizMenzil(d){
+ var J=jd(d), L=boylam(J), Ay=ayanamsa(J), Sd=((L-Ay)%360+360)%360;
+ var si=Math.floor(Sd/GEN), ti=Math.floor(L/GEN);
+ el("menzil").innerHTML=
+   '<div class="kv"><span>Sidereal menzil</span><span><b>'+(si+1)+". "+MENZIL[si]+"</b> · "+der(Sd-si*GEN)+'</span></div>'
+  +'<div class="kv"><span>Tropik menzil</span><span><b>'+(ti+1)+". "+MENZIL[ti]+"</b> · "+der(L-ti*GEN)+'</span></div>'
+  +'<div class="kv"><span>Ay\'ın tropik boylamı</span><span>'+der(L)+'</span></div>'
+  +'<div class="kv"><span>Ayanamsa</span><span>'+der(Ay)+'</span></div>';
+}
+
+/* ---------- Kan aldırma: ayın günleri. [asıl, günümüz Türkçesi] ---------- */
+var KAN={
+ 1:["endâmı ditregen ola","Vücudu titrer olur"],
+ 2:["isteriyye mübtelâ ola","İsteriye tutulur"],
+ 3:["dürlü dürlü 'illetler 'ârız ola","Türlü türlü hastalığa yakalanır"],
+ 4:["mevt-i müfâcâya uğraya","Ani ölüme uğrar"],
+ 5:["endâmı ditregen ola","Vücudu titrer olur"],
+ 6:["ma'desi fâsid ola","Midesi bozulur"],
+ 7:["endâmı süst ola","Uzuvları gevşer, zayıflar"],
+ 8:["müşkil rencler ve marazlar 'ârız ola","Ağır dert ve hastalıklara yakalanır"],
+ 9:["mevt-i müfâcâya uğraya","Ani ölüme uğrar"],
+ 10:["dimâgı yâbis ola","Beyni kurur"],
+ 11:["bedeninde kabarcuk çıbanları çıka","Bedeninde kabarcıklı çıbanlar çıkar"],
+ 12:["ağzı kokagan ola","Ağzı kokar"],
+ 13:["kalbi mahzûn ola","Kalbi hüzünlü olur"],
+ 14:["endâmı süst ola","Uzuvları gevşer, zayıflar"],
+ 15:["işbu zikr olınan rencler 'ârız ola","Yukarıda sayılan hastalıklar gelir"],
+ 16:["kabarcuk rencin gidere","Kabarcık derdini giderir"],
+ 17:["tâ bir yıla degin 'illet görmeye","Bir yıl boyunca hastalık görmez"],
+ 18:["baş ağrısından emin ola","Baş ağrısından emin olur"],
+ 19:["meflûc olmakdan hâlâs ola","Felç olmaktan kurtulur"],
+ 20:["nâzileyi def' éde","Nezleyi, akıntıyı giderir"],
+ 21:["yürek ağrısın gidere","Yürek ağrısını giderir"],
+ 22:["ağzı kokusın gidere","Ağız kokusunu giderir"],
+ 23:["endâmı kuvvetlü ola","Vücudu kuvvetlenir"],
+ 24:["sayrulık gide","Hastalığı gider"],
+ 25:["zekâsı arta","Zekâsı artar"],
+ 26:["hastalıkdan hâlâs ola","Hastalıktan kurtulur"],
+ 27:["kalbinden zahm gide","Kalbindeki yara gider"],
+ 28:["gevdesi kavî ola","Bedeni güçlenir"],
+ 29:["muhâtara vardur","Tehlike vardır"],
+ 30:["muhâtara vardur","Tehlike vardır"]
+};
+function kanSinif(g){return g<=15?"z":(g<=28?"f":"ka")}
+function cizKan(){
+ var g=parseInt(el("hg").value,10);
+ if(!(g>=1&&g<=30)){el("kanhuk").innerHTML="";}
+ else{
+  var k=KAN[g], c=kanSinif(g);
+  var bas=(c==="z"?"Zararlı sayılmış":(c==="f"?"Faydalı sayılmış":"Tehlikeli sayılmış"));
+  el("kanhuk").innerHTML='<div class="khuk"><p class="bas '+c+'">Ayın '+g+". günü — "+bas+'</p><p style="margin:0">'
+   +k[1]+'</p><p class="asl" style="margin:3px 0 0">'+k[0]+"</p></div>";
+ }
+ var h="";
+ for(var i=1;i<=30;i++){h+='<div class="kg '+kanSinif(i)+(i===g?" sel":"")+'" data-g="'+i+'">'+i+"</div>"}
+ el("kangrid").innerHTML=h;
+ cizGun();
+ Array.prototype.forEach.call(document.querySelectorAll("#kangrid .kg"),function(d){
+  d.addEventListener("click",function(){el("hg").value=d.getAttribute("data-g");cizKan()});
+ });
+}
+
+/* ---------- Ayın günleri: hâssalar ---------- */
+var GUN={
+1:{hal:"m",tarih:"Allah, Âdem peygamberi bu gün yarattı.",
+ iyi:["Padişahları görmek, devlet büyüklerinin huzuruna çıkmak (bilhassa)","Hâcet dilemek, dilekte bulunmak","Ticaret yapmak (gayet güzel)","Hayvan satın almak — uğurlu olur, çok hayır getirir","Dostlara mektup yazmak","Bir yerden başka bir yere taşınmak","Birinden bir şey istemek","Bir yere yola çıkmak — çabuk varır"],
+ hasta:"Çabuk iyileşir.",dogan:"Selâmet bulur, her belâdan emin olur. Tahsile veya bir sanata verilirse başarılı olur.",kacan:"Bulunur."},
+2:{hal:"m",tarih:"Allah, Havvâ'yı bu gün yarattı.",
+ iyi:["Evlenmek","Alım satım","Ortaklık kurmak","Ödünç vermek (gayet güzel)","Beyleri ve padişahları görmek","Biriyle dostluk kurmak","Bir yerden başka bir yere taşınmak"],
+ dogan:"Selâmet bulur.",kacan:"Geri bulunur."},
+3:{hal:"n",tarih:"Âdem ile Havvâ'nın üzerindeki elbiseler, buğdaydan yedikleri için bu gün çıkarıldı.",
+ kotu:["Padişahları görmek — elden geldiğince sakın","İş yapmak, işe girişmek","Sefere çıkmak","Alım satım","Nikâh kıymak"],
+ tavsiye:"Bir miktar sadaka ver ki bu günün belâsı def olsun.",
+ hasta:"Üç güne kadar iyileşmezse ölümü yakındır.",dogan:"Felah bulmaz.",kacan:"Geri bulunmaz.",
+ vurgu:"Katı nahs — çok uğursuz sayılmış"},
+4:{hal:"m",tarih:"Kâbil bu gün dünyaya geldi.",
+ iyi:["Eşlerin birleşmesi (metinde: çiftlenmek)","Her türlü işe girişmek","Nikâh kıymak","Husumet ve savaşa girişmek — zafer bulur","Bir işi ciddiyetle tutmak — sonuca ulaşır","İlaç içmek"],
+ hasta:"Hastalığı uzun sürer; ancak ilaç içmek iyidir.",
+ dogan:"Şakî (kötü huylu) olur, anne babasına âsi olur; ama bedeni ve uzuvları güçlü ve sağlam olur.",kacan:"Geri bulunur."},
+5:{hal:"m",tarih:"Hâbil bu gün dünyaya geldi.",
+ kotu:["Sefere gitmek","Hâcet, dilek talep etmek"],
+ dogan:"Doğru sözlü olur, Allah'ın taatine rağbet eder, hastalıktan selâmet bulur.",kacan:"Geri bulunmaz."},
+6:{hal:"m",
+ iyi:["Eşlerin birleşmesi (metinde: çiftlenmek)","Ortaklık kurmak","Ödünç vermek","Senet, belge yazıp vermek (gayet bereketli)","Sefere çıkmak — faydası çok olur","Ava çıkmak","Hayvan satın almak — uzun süre elinde kalır, çok sevinç getirir","Ekin biçmek veya meyve devşirmek — sevinç bulur","Alım satım — fayda eder"],
+ hasta:"Hastalığı ağır olur; sekiz güne kadar tehlike vardır, endişe etmek gerekir.",
+ dogan:"Zengin olur.",kacan:"Geri bulunmaz.",
+ not:"Kaçan hakkındaki ibare (meger ki öle, gün seşenbih ola) belirsiz; salı gününe dair bir kayıt olabilir."},
+7:{hal:"m",
+ iyi:["Sultanları görmek ve onlarla sohbet etmek (bilhassa)","Kan aldırmak","Sefere çıkmak","Hizmetli satın almak"],
+ hasta:"Hastalık ağır olur; sonrasında kurtulup sağlık bulur.",
+ kacan:"Beş güne kadar bulunur; beş gün geçerse artık bulunmaz.",
+ tavsiye:"Bu günde hayır çoktur."},
+8:{hal:"m",
+ iyi:["Ava çıkmak","Sultanların huzuruna çıkmak","Hâcet dilemek","Dört ayaklı hayvan satın almak"],
+ kotu:["Sefere çıkmak — elden geldiğince sakınmak gerekir; mecbur kalınırsa sadaka verilmeli"],
+ hasta:"Bir haftaya kadar iyileşirse kurtulur, aksi hâlde vefat eder.",dogan:"Yerinde durmaz."},
+9:{hal:"m",
+ iyi:["Sefere çıkmak — maksadına erişir","İlaç içmek","Ekin ekmek","Alım satım, bilhassa hayvan almak"],
+ hasta:"Hastalığı uzun sürer.",dogan:"Ömrü uzun olur.",kacan:"Bulunur."},
+10:{hal:"m",tarih:"Nûh peygamber bu gün dünyaya geldi.",
+ iyi:["Kan aldırmak","İlaç içmek"],kotu:["Sultanları ve beyleri görmek"],
+ dogan:"Rızkı bol olur, asla yoksul düşmez."},
+11:{hal:"m",
+ iyi:["Ava çıkmak","Alışveriş","Hayvan almak"],
+ hasta:"On güne kadar iyileşmezse ölür.",dogan:"Salih ve dindar olur.",kacan:"Geri bulunmaz.",
+ not:"Metin bu günü açıkça mübârek diye adlandırmıyor; sınıflandırma neşri hazırlayan Atasoy'a ait. Ayrıca hastalar için iki zıt hüküm var: on güne kadar iyileşmezse ölür, ve bu günde hastalanan çabuk sıhhat bulur."},
+12:{hal:"m",
+ iyi:["Meyve devşirmek","Ekin biçmek","Bir yerden başka bir yere taşınmak"],
+ kotu:["Çekişmek, kavga etmek","Düşman toprağında savaşmak","Savaşa gitmek","Tırnak kesmek","Elbise yıkamak","Baş yıkamak"],
+ hasta:"Hastalığı uzun sürer, ölüme yaklaşır ama sonra sıhhat bulur; o hastalıktan ölmez.",
+ dogan:"Ömrü uzun olur, sultandan çok hayır görür.",kacan:"Bulunur."},
+13:{hal:"n",
+ iyi:["Denizde ve karada av avlamak","Baş yıkamak","Gusletmek","Tırnak kesmek"],
+ kotu:["Sultan görmek"],
+ tavsiye:"Gayet sakınmak ve sadaka vermek gerekir.",
+ hasta:"Sıhhat bulur.",dogan:"İçki içen ve yalancı olur."},
+14:{hal:"m",
+ iyi:["Sultanları görmek","Evlenmek","Her türlü işe girişmek","İlaç içmek","Sefere gitmek — kurtuluş bulur, sağ salim döner"],
+ hasta:"İki haftaya kadar iyileşmezse endişe etmek gerekir.",
+ dogan:"Güzel huylu olur. Talihi ilim öğrenmeye elverişlidir; ömrünün sonunda zengin olur.",kacan:"Bulunmaz.",
+ tavsiye:"Metin bu günü «Lebbeyk!» denilecek gün olarak anıyor."},
+15:{hal:"m",
+ iyi:["Hâcet dilemek","Satın almak (çok iyidir)"],
+ kotu:["Sefere gitmek — ne kadar gayret edilirse edilsin","Satmak"],
+ hasta:"Ondan korkmak gerekir; ölüm hazırlığı görmek gerekir.",dogan:"Talihi kutlu olur."},
+16:{hal:"n",
+ iyi:["Ticaret","İmar, inşaat","Ekin ekmek (çok bereketli)"],
+ kotu:["Sefere çıkmak — helâk olur"],
+ tavsiye:"Sadaka vermek gerekir.",
+ hasta:"Ölüm korkusu vardır.",dogan:"Büyük ihtimalle aklî dengesi bozuk olur.",kacan:"Bulunur.",
+ vurgu:"Uğursuzluğu en yüksek derecede sayılmış"},
+17:{hal:"m",
+ iyi:["Bütün hâcetlere girişmek","Gusletmek, temizlenmek (gayet iyidir)"],
+ dogan:"Ömrü uzun olur.",kacan:"Bulunur.",vurgu:"Gayet mübârek gün"},
+18:{hal:"m",
+ iyi:["Deniz ve kara seferi","Her hâcet ve teşebbüs","Savaşa başlamak — zafer bulur","Alım satım, bilhassa hayvan alıp satmak"],
+ hasta:"Sıhhat bulur.",dogan:"Ömrü uzun olur."},
+19:{hal:"m",tarih:"İshak peygamber bu gün dünyaya geldi.",
+ iyi:["Bütün hâcetler için uygundur","Sefere gitmek — çok hayır bulur, seferi bereketli olur"],
+ hasta:"Selâmet bulur.",
+ dogan:"Dindar ve takva sahibi olur, ömrü uzun olur. Bu gün bir sanata verilen çocuk sanatını çabuk öğrenir ve başarılı olur."},
+20:{hal:"m",
+ iyi:["Sefere çıkmak — ganimet bulur, karada ve denizde bütün âfetlerden kurtulur"],
+ hasta:"Yedi gün geçerse kurtulur.",kacan:"Bulunmaz; bu gün kaybolan hiçbir şey de bulunmaz."},
+21:{hal:"n",
+ iyi:["Kan aldırmak (gayet iyi)","Sefere çıkmak","Alım satım"],
+ kotu:["Evinden dışarı çıkmak"],
+ hasta:"Hastalığı uzun sürer; bu gün hastalanan için korku vardır.",
+ dogan:"Ömrü uzun olur.",kacan:"Geri bulunur.",
+ not:"Metin bu günü nahs ilan ettikten hemen sonra sefer ve alım satımı iyi sayıyor. Çelişkili görünüyor."},
+22:{hal:"m",
+ iyi:["Sultan görmek","Hâcet talep etmek","Eşlerin birleşmesi (metinde: çiftlenmek)","Her türlü muamele"],
+ hasta:"On üç gün geçerse kurtulur ve bütün korkulardan emin olur.",
+ dogan:"Ömrü uzun olur.",kacan:"Geri bulunur.",
+ tavsiye:"Bu günü hoş gören için mübârek olur."},
+23:{hal:"m",
+ iyi:["Sefere çıkmak — ganimet bulup sıhhat ve selâmetle döner","Bütün hâcetler","Ortaklık","Mahkeme belgesi, hüküm yazmak","Sultanları görmek"]},
+24:{hal:"n",tarih:"Firavun bu gün doğdu.",
+ kotu:["Ortaklık kurmak (çok uğursuz)","Savaşa başlamak — hasmı galip gelir","Kan aldırmak"],
+ hasta:"Kan aldırırsa hastalığı artar.",dogan:"Sert, şiddetli olur.",
+ kacan:"Dilenci düşer yahut yırtıcı hayvana yem olur.",vurgu:"Katı nahs gün"},
+25:{hal:"n",tarih:"Basra halkına bu gün yedi türlü azap indi. Metin günü, Allah'ın Mûsâ'ya «asanla kayaya vur» buyruğunu anarak bitiriyor.",
+ tavsiye:"Herkes gücü yettiğince sadaka, ihsan ve iyilik yapmalıdır.",
+ hasta:"Ona çok korku vardır; sakınmak gerekir.",dogan:"Hastalığa uğrar, çabuk ölür.",
+ kacan:"Yüksekten düşer.",vurgu:"Katı nahs gün"},
+26:{hal:"m",
+ iyi:["Ticaret","Hâcet dilemek"],
+ hasta:"Rahatsızlığı dizinden olur; yedi gün geçerse kurtulur.",dogan:"Ömrü uzun olur.",
+ not:"Bu gün eş olanlar için metin \u201cyaşaya; illâ kim ayrılalar\u201d diyor: birlikte yaşarlar, meğer ki ayrılsınlar. İbare kapalı."},
+27:{hal:"m",
+ iyi:["Alım satım, bilhassa hayvan alıp satmak","Hâcet dilemek","Sultan görmek — son derece güzel, o kimseye ondan hayır erişir"],
+ hasta:"İşi ağır olur, yirmi güne kadar; yirmi gün geçerse selâmet bulur.",
+ dogan:"Hayır işlerine yatkın olur.",kacan:"Bulunmaz."},
+28:{hal:"n",
+ iyi:["Düşmanıyla çekişmek — maksadına ve muradına erer"],
+ kotu:["Alım satım","Sefere çıkmak"],
+ hasta:"Yedi gün geçerse kurtulur.",dogan:"Halk arasında hürmet görür.",
+ not:"Metin bu günü açıkça nahs diye adlandırmıyor, alım satım ve seferin uygun olmadığını söylüyor. Nahs sınıflandırması neşri hazırlayan Atasoy'a ait."},
+29:{hal:"m",
+ iyi:["Ticaret","Bütün hâcetleri dilemek","Sefere gitmek (gayet iyi) — zenginlik elde eder, kimseye muhtaç olmaz"]},
+30:{hal:"m",
+ iyi:["Bütün hâcetler"],
+ dogan:"Ömrünün sonunda zengin olur, ululuk bulur, doğru sözlü olur, her dertten emin olur."}
+};
+var HAL={m:["Mübârek","m"],n:["Nahs","n"],k:["Karışık","k"]};
+var HALSIN={m:"f",n:"z",k:"ka"};
+function cizGunGrid(g){
+ var h="";
+ for(var i=1;i<=30;i++){h+='<div class="kg '+HALSIN[GUN[i].hal]+(i===g?" sel":"")+'" data-g="'+i+'">'+i+"</div>"}
+ el("gungrid").innerHTML=h;
+ Array.prototype.forEach.call(document.querySelectorAll("#gungrid .kg"),function(d){
+  d.addEventListener("click",function(){el("hg").value=d.getAttribute("data-g");cizKan()});
+ });
+}
+function cizGun(){
+ var g=parseInt(el("hg").value,10);
+ cizGunGrid(g>=1&&g<=30?g:0);
+ if(!(g>=1&&g<=30)){el("gunhas").innerHTML="";return}
+ var x=GUN[g], h='<div class="gk"><span class="bdg '+HAL[x.hal][1]+'">'+HAL[x.hal][0]+"</span>";
+ h+="<h3>Ayın "+g+". günü</h3>";
+ if(x.vurgu){h+='<p class="f" style="color:var(--ink2)">'+x.vurgu+"</p>"}
+ if(x.tarih){h+='<p class="tar">'+x.tarih+"</p>"}
+ if(x.iyi){h+='<h5 class="iyi">Eyüdür</h5><ul><li>'+x.iyi.join("</li><li>")+"</li></ul>"}
+ if(x.kotu){h+='<h5 class="kotu">Eyü degüldür</h5><ul><li>'+x.kotu.join("</li><li>")+"</li></ul>"}
+ if(x.tavsiye){h+='<h5>Tavsiye</h5><p class="f">'+x.tavsiye+"</p>"}
+ if(x.hasta){h+='<h5>Bu gün hastalanan</h5><p class="f">'+x.hasta+"</p>"}
+ if(x.dogan){h+='<h5>Bu gün doğan</h5><p class="f">'+x.dogan+"</p>"}
+ if(x.kacan){h+='<h5>Kaçan veya kaybolan</h5><p class="f">'+x.kacan+"</p>"}
+ if(x.not){h+='<p class="uy">'+x.not+"</p>"}
+ el("gunhas").innerHTML=h+"</div>";
+}
+
+/* ---------- Namaz vakitleri: Diyanet yöntemi (fecr 18°, ikindi asr-ı evvel, temkinli) ---------- */
+var IL=[["Adana",37.00,35.32],["Adıyaman",37.76,38.28],["Afyonkarahisar",38.76,30.54],["Ağrı",39.72,43.05],["Aksaray",38.37,34.03],["Amasya",40.65,35.83],["Ankara",39.93,32.86],["Antalya",36.89,30.71],["Ardahan",41.11,42.70],["Artvin",41.18,41.82],["Aydın",37.85,27.85],["Balıkesir",39.65,27.88],["Bartın",41.64,32.34],["Batman",37.88,41.13],["Bayburt",40.26,40.23],["Bilecik",40.14,29.98],["Bingöl",38.88,40.50],["Bitlis",38.40,42.11],["Bolu",40.74,31.61],["Burdur",37.72,30.29],["Bursa",40.19,29.06],["Çanakkale",40.15,26.41],["Çankırı",40.60,33.62],["Çorum",40.55,34.95],["Denizli",37.78,29.09],["Diyarbakır",37.91,40.24],["Düzce",40.84,31.16],["Edirne",41.68,26.56],["Elazığ",38.68,39.22],["Erzincan",39.75,39.49],["Erzurum",39.90,41.27],["Eskişehir",39.78,30.52],["Gaziantep",37.07,37.38],["Giresun",40.91,38.39],["Gümüşhane",40.46,39.48],["Hakkari",37.58,43.74],["Hatay",36.20,36.16],["Iğdır",39.92,44.04],["Isparta",37.76,30.55],["İstanbul",41.01,28.98],["İzmir",38.42,27.14],["Kahramanmaraş",37.58,36.94],["Karabük",41.20,32.62],["Karaman",37.18,33.22],["Kars",40.60,43.10],["Kastamonu",41.38,33.78],["Kayseri",38.73,35.48],["Kilis",36.72,37.12],["Kırıkkale",39.85,33.51],["Kırklareli",41.73,27.22],["Kırşehir",39.15,34.16],["Kocaeli",40.77,29.92],["Konya",37.87,32.48],["Kütahya",39.42,29.98],["Malatya",38.35,38.31],["Manisa",38.61,27.43],["Mardin",37.31,40.74],["Mersin",36.81,34.64],["Muğla",37.22,28.36],["Muş",38.74,41.49],["Nevşehir",38.62,34.71],["Niğde",37.97,34.68],["Ordu",40.98,37.88],["Osmaniye",37.07,36.25],["Rize",41.02,40.52],["Sakarya",40.78,30.40],["Samsun",41.29,36.33],["Siirt",37.93,41.94],["Sinop",42.03,35.15],["Sivas",39.75,37.02],["Şanlıurfa",37.16,38.79],["Şırnak",37.52,42.46],["Tekirdağ",40.98,27.51],["Tokat",40.31,36.55],["Trabzon",41.00,39.72],["Tunceli",39.11,39.55],["Uşak",38.68,29.41],["Van",38.50,43.38],["Yalova",40.65,29.27],["Yozgat",39.82,34.81],["Zonguldak",41.45,31.79]];
+var KONUM={il:"Sakarya",lat:40.78,lon:30.40,tz:3};
+function dsin(x){return Math.sin(x*RAD)} function dcos(x){return Math.cos(x*RAD)}
+function dtan(x){return Math.tan(x*RAD)} function dasin(x){return Math.asin(x)/RAD}
+function dacos(x){return Math.acos(x)/RAD} function datan2(y,x){return Math.atan2(y,x)/RAD}
+function fixh(h){h=h-24*Math.floor(h/24);return h}
+function gunes(J){
+ function fa(x){return x-360*Math.floor(x/360)}
+ var D=J-2451545.0, g=fa(357.529+0.98560028*D), q=fa(280.459+0.98564736*D);
+ var L=fa(q+1.915*dsin(g)+0.020*dsin(2*g)), e=23.439-0.00000036*D;
+ var RA=fixh(datan2(dcos(e)*dsin(L),dcos(L))/15), eqt=q/15-RA;
+ if(eqt>12){eqt-=24} if(eqt<-12){eqt+=24}
+ return {dek:dasin(dsin(e)*dsin(L)), eqt:eqt};
+}
+function vakitler(d,lat,lon,tz){
+ var J0=Math.floor(jd(new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()))))+0.5-lon/360;
+ function ac(alt,J){var s=gunes(J);return dacos((dsin(alt)-dsin(s.dek)*dsin(lat))/(dcos(s.dek)*dcos(lat)))/15}
+ var s0=gunes(J0+0.5), ogle=12+tz-lon/15-s0.eqt;
+ var imsak=ogle-ac(-18,J0+0.2), dogus=ogle-ac(-0.833,J0+0.25), batis=ogle+ac(-0.833,J0+0.75);
+ var sa=gunes(J0+0.65), asrAlt=Math.atan(1/(1+dtan(Math.abs(lat-sa.dek))))/RAD, ikindi=ogle+ac(asrAlt,J0+0.65);
+ return {imsak:imsak*60, gunes:dogus*60-7, ogle:ogle*60+5, ikindi:ikindi*60+4, aksam:batis*60+7};
+}
+function vakitHesapla(){
+ var d=new Date(el("tarih").value+"T12:00:00"); if(isNaN(d)){d=new Date()}
+ var v=vakitler(d,KONUM.lat,KONUM.lon,KONUM.tz);
+ var sab=(el("smod").value==="i")?v.imsak:v.gunes;
+ var kd=parseInt(el("kdk").value,10); if(!(kd>=0)){kd=45}
+ el("t0").value=st(sab); el("t1").value=st(v.gunes+kd); el("t2").value=st(v.ogle);
+ el("t3").value=st(v.ikindi); el("t4").value=st(v.aksam);
+}
+
+/* ---------- Kayıt ---------- */
+function kaydet(){
+ try{
+  localStorage.setItem("guncetveli2",JSON.stringify({konum:KONUM,smod:el("smod").value,kdk:el("kdk").value}));
+ }catch(e){}
+}
+function yukle(){
+ try{
+  var r=localStorage.getItem("guncetveli2");
+  if(r){var o=JSON.parse(r); if(o.konum&&typeof o.konum.lat==="number"){KONUM=o.konum}
+   if(o.smod){el("smod").value=o.smod} if(o.kdk){el("kdk").value=o.kdk}}
+ }catch(e){}
+}
+
+(function(){
+ var h="";
+ ["Zühal","Müşterî","Mirrîh","Şems","Zühre","Utârid","Kamer"].forEach(function(g){
+  h+='<div class="row clk" style="margin-bottom:0"><span class="p">'+g+'</span>'
+   +'<span class="d">'+AMEL[g].iyi.length+" eyü · "+AMEL[g].kotu.length+' eyü degül</span><span class="chev">▾</span></div>'
+   +'<div style="display:none">'+amelHTML(g)+"</div>";
+ });
+ el("ameller").innerHTML=h;
+ Array.prototype.forEach.call(document.querySelectorAll("#ameller .row.clk"),function(r){
+  r.addEventListener("click",function(){
+   var k=r.nextElementSibling, ac=(k.style.display==="none");
+   k.style.display=ac?"block":"none";
+   r.querySelector(".chev").textContent=ac?"▴":"▾";
+  });
+ });
+})();
+
+(function(){
+ var h="";IL.forEach(function(x){h+='<option value="'+x[0]+'">'+x[0]+"</option>"});
+ h+='<option value="__konum">Bulunduğum konum</option>';
+ el("il").innerHTML=h;
+})();
+yukle();
+function ilGoster(){
+ if(KONUM.il==="__konum"){el("il").value="__konum";el("geonot").textContent="Konum: "+KONUM.lat.toFixed(2)+", "+KONUM.lon.toFixed(2)}
+ else{el("il").value=KONUM.il;el("geonot").textContent=""}
+}
+ilGoster();
+(function(){var n=new Date();el("tarih").value=n.getFullYear()+"-"+String(n.getMonth()+1).padStart(2,"0")+"-"+String(n.getDate()).padStart(2,"0")})();
+function yenidenHesapla(){vakitHesapla();cizCetvel()}
+el("tarih").addEventListener("input",yenidenHesapla);
+el("il").addEventListener("change",function(){
+ var v=el("il").value;
+ if(v==="__konum"){el("geo").click();return}
+ IL.forEach(function(x){if(x[0]===v){KONUM={il:x[0],lat:x[1],lon:x[2],tz:3}}});
+ el("geonot").textContent=""; kaydet(); yenidenHesapla();
+});
+el("smod").addEventListener("change",function(){kaydet();yenidenHesapla()});
+el("kdk").addEventListener("input",function(){kaydet();yenidenHesapla()});
+["t0","t1","t2","t3","t4"].forEach(function(k){el(k).addEventListener("input",cizCetvel)});
+el("geo").addEventListener("click",function(){
+ if(!navigator.geolocation){el("geonot").textContent="Bu tarayıcı konum vermiyor; listeden il seç.";ilGoster();return}
+ el("geonot").textContent="Konum alınıyor…";
+ navigator.geolocation.getCurrentPosition(function(p){
+  KONUM={il:"__konum",lat:p.coords.latitude,lon:p.coords.longitude,tz:-new Date().getTimezoneOffset()/60};
+  kaydet(); ilGoster(); yenidenHesapla();
+ },function(){
+  el("geonot").textContent="Konum alınamadı; listeden il seç.";
+  el("il").value=(KONUM.il==="__konum")?"Sakarya":KONUM.il;
+ },{timeout:10000});
+});
+vakitHesapla();
+el("hg").addEventListener("input",cizKan);
+el("tkv").addEventListener("change",cizCetvel);
+cizCetvel();
+</script>
+</body>
+</html>
