@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gün Cetveli — Yedi Yıldızun Ahkâmı</title>
-<meta name="description" content="Günün saatleri, ayın günlerinin hâssaları ve ay menzili — Şeyh Vefâ'nın Yedi Yılduzuŋ Ahkâmı risalesine göre.">
+<meta name="description" content="Günün saatleri, yıldızlara göre ameller ve ayın günlerinin hâssaları — Şeyh Vefâ'nın Yedi Yılduzuŋ Ahkâmı risalesine göre.">
 <meta property="og:title" content="Gün Cetveli — Şeyh Vefâ, Yedi Yılduzuŋ Ahkâmı">
-<meta property="og:description" content="Günün saatleri, ayın günlerinin hâssaları ve ay menzili — Şeyh Vefâ'nın risalesine göre.">
+<meta property="og:description" content="Günün saatleri, yıldızlara göre ameller ve ayın günlerinin hâssaları — Şeyh Vefâ'nın risalesine göre.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#F7F4EE">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
@@ -166,12 +166,6 @@ footer{color:var(--ink3);font-size:12px;text-align:center;margin-top:26px;line-h
   <h2>Yıldızlara göre ameller</h2>
   <p class="note">Hükümler güne değil yıldıza bağlıdır; hangi güne düştüğü fark etmez. Yukarıdaki cetvelde bir dilime dokunarak da görebilirsin.</p>
   <div id="ameller"></div>
-</section>
-
-<section>
-  <h2>Ay menzili</h2>
-  <p class="note">Ay'ın boylamından hesaplanır. Sidereal sütunu yıldız temelli klasik kaynaklar, tropik sütunu şematik burç tabloları içindir.</p>
-  <div id="menzil"></div>
 </section>
 
 <section>
@@ -433,7 +427,6 @@ function cizCetvel(){
   if(r.nextElementSibling.style.display==="block"){r.querySelector(".chev").textContent="▴"}
  });
  cizHicri(d);
- cizMenzil(d);
 }
 
 function jdn(d){
@@ -467,38 +460,9 @@ function cizHicri(d){
  cizKan();
 }
 
-/* ---------- Ay menzili ---------- */
-var MENZIL=["Şeratan","Butayn","Süreyyâ","Deberân","Hak'a","Hen'a","Zirâ'","Nesre","Tarf","Cebhe","Zübre","Sarfe","Avvâ","Simâk","Gafr","Zübânâ","İklîl","Kalb","Şevle","Neâim","Belde","Sa'd-ı Zâbih","Sa'd-ı Bül'a","Sa'd-ı Suûd","Sa'd-ı Ahbiye","Fer'u'l-Mukaddem","Fer'u'l-Muahhar","Batnü'l-Hût"];
-var RAD=Math.PI/180, GEN=360/28;
-var TRM=[[0,0,1,0,6288774],[2,0,-1,0,1274027],[2,0,0,0,658314],[0,0,2,0,213618],[0,1,0,0,-185116],[0,0,0,2,-114332],[2,0,-2,0,58793],[2,-1,-1,0,57066],[2,0,1,0,53322],[2,-1,0,0,45758],[0,1,-1,0,-40923],[1,0,0,0,-34720],[0,1,1,0,-30383],[2,0,0,-2,15327],[0,0,1,2,-12528],[0,0,1,-2,10980],[4,0,-1,0,10675],[0,0,3,0,10034],[4,0,-2,0,8548],[2,1,-1,0,-7888],[2,1,0,0,-6766],[1,0,-1,0,-5163],[1,1,0,0,4987],[2,-1,1,0,4036],[2,0,2,0,3994],[4,0,0,0,3861],[2,0,-3,0,3665],[0,1,-2,0,-2689],[2,0,-1,2,-2602],[2,-1,-2,0,2390],[1,0,1,0,-2348],[2,-2,0,0,2236],[0,1,2,0,-2120],[0,2,0,0,-2069],[2,-2,-1,0,2048],[2,0,1,-2,-1773],[2,0,0,2,-1595],[4,-1,-1,0,1215],[0,0,2,2,-1110],[3,0,-1,0,-892],[2,1,1,0,-810],[4,-1,-2,0,759],[0,2,-1,0,-713],[2,2,-1,0,-700],[2,1,-2,0,691],[2,-1,0,-2,596],[4,0,1,0,549],[0,0,4,0,537],[4,-1,0,0,520],[1,0,-2,0,-487]];
+/* ---------- Yardımcı ---------- */
+var RAD=Math.PI/180;
 function jd(d){return d.getTime()/86400000+2440587.5}
-function boylam(J){
- var T=(J-2451545)/36525;
- var Lp=218.3164477+481267.88123421*T-0.0015786*T*T+T*T*T/538841;
- var D=297.8501921+445267.1114034*T-0.0018819*T*T+T*T*T/545868;
- var M=357.5291092+35999.0502909*T-0.0001536*T*T;
- var Mp=134.9633964+477198.8675055*T+0.0087414*T*T+T*T*T/69699;
- var F=93.272095+483202.0175233*T-0.0036539*T*T-T*T*T/3526000;
- var E=1-0.002516*T-0.0000074*T*T, s=0;
- for(var i=0;i<TRM.length;i++){
-  var t=TRM[i], ar=(t[0]*D+t[1]*M+t[2]*Mp+t[3]*F)*RAD, c=t[4], e=Math.abs(t[1]);
-  if(e===1){c*=E}else if(e===2){c*=E*E}
-  s+=c*Math.sin(ar);
- }
- s+=3958*Math.sin((119.75+131.849*T)*RAD)+1962*Math.sin((Lp-F)*RAD)+318*Math.sin((53.09+479264.29*T)*RAD);
- return ((Lp+s/1e6)%360+360)%360;
-}
-function ayanamsa(J){return 23.85+(J-2451545)/365.25*0.013972}
-function der(x){var d=Math.floor(x),m=Math.round((x-d)*60);if(m===60){d++;m=0}return d+"° "+m+"′"}
-function cizMenzil(d){
- var J=jd(d), L=boylam(J), Ay=ayanamsa(J), Sd=((L-Ay)%360+360)%360;
- var si=Math.floor(Sd/GEN), ti=Math.floor(L/GEN);
- el("menzil").innerHTML=
-   '<div class="kv"><span>Sidereal menzil</span><span><b>'+(si+1)+". "+MENZIL[si]+"</b> · "+der(Sd-si*GEN)+'</span></div>'
-  +'<div class="kv"><span>Tropik menzil</span><span><b>'+(ti+1)+". "+MENZIL[ti]+"</b> · "+der(L-ti*GEN)+'</span></div>'
-  +'<div class="kv"><span>Ay\'ın tropik boylamı</span><span>'+der(L)+'</span></div>'
-  +'<div class="kv"><span>Ayanamsa</span><span>'+der(Ay)+'</span></div>';
-}
 
 /* ---------- Kan aldırma: ayın günleri. [asıl, günümüz Türkçesi] ---------- */
 var KAN={
